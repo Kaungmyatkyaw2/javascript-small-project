@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Form</title>
+    
+  </head>
+  <style>
+
+.btn-container{
+  margin-left:80%;
+  margin-top:20px;
+}
+
+ .btn-container a{
+    background-color:rgba(125, 138, 255, 0.589);
+    padding:12px;
+    font-family: 'Times New Roman';
+    border-radius: 7px;
+    margin-left: 17px;
+    cursor:pointer;
+  }
+
+  .btn-login{
+  left:20px;
+  }
+
+  .form{
+    background-color:whitesmoke;
+    width:400px;
+    padding-bottom:60px;
+    border:2px solid rgb(61, 55, 54);
+    height:260px;
+    width:320px;
+    border-radius:5px;
+    box-shadow:14px 14px rgb(217, 223, 217);
+  }
+
+  
+  .loginh2{
+    padding-top:12px;
+    background-color: aquamarine;
+    padding-bottom:12px;
+  }
+
+  .remove1{
+    padding-left:290px;
+    padding-top:20px;
+    cursor:pointer;
+  }
+
+  .loginbtn{
+    margin-left:80px;
+  }
+
+  .cancel{
+    padding:7px;
+    background-color: yellow;
+    padding-left:12px;
+    padding-right:12px;   
+    border:1px solid navajowhite;
+    margin-top:10px;
+    margin-left: 18px;
+    border-radius:5px;
+    cursor:pointer;
+  }
+
+ .formin{
+   margin-top:130px;
+   display:none;
+   
+ }
+
+ .remove{
+   border: none;
+   background-color:aliceblue;
+   cursor:pointer;
+ }
+
+.regful{
+  background-color:whitesmoke;
+    width:400px;
+    padding-bottom:60px;
+    border:2px solid rgb(61, 55, 54);
+    height:260px;
+    width:320px;
+    border-radius:5px;
+    box-shadow:14px 14px rgb(217, 223, 217);
+    height:380px;
+    margin-top:120px;
+    display:none;
+    
+}
+
+.regbutton button {
+  padding:7px;
+    background-color: yellow;
+    padding-left:12px;
+    padding-right:12px;   
+    border:1px solid navajowhite;
+    margin-top:10px;
+    margin-left: 18px;
+    border-radius:5px; 
+    cursor:pointer;
+}
+
+button[type="reset"]{
+  background-color: rgb(27, 235, 27);
+  border:2px solid rgba(30, 122, 30);
+}
+
+
+button[type="submit"]{
+  border:2px solid rgb(143, 143, 10);
+}
+
+
+
+.regbutton {
+  margin-left:100px;
+}
+
+
+
+  </style>
+  <body>
+
+
+<div class="btn-container">
+
+<a class="btns-login"  id="login">Login</a>
+<a calss="btn-reg" id="reg" onclick="reg()">Register</a>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<center>
+<div class="regful" id="regfuls">
+
+  <form action="" method="" >
+    <center>
+
+          
+    <button class="remove" id="remove" onclick="remove()"><img src="remove.png" alt="" width="16px" class="remove1"></button>
+    <h2 class="loginh2">Register</h2>
+
+
+    <label for="firstname">FirstName</label>
+    <input type="text" id="firstname" maxlength="8" placeholder="First Name"><br><br>
+
+    <label for="middelname">MiddleName</label>
+    <input type="text" id="middlename" maxlength="8" placeholder="Middle Name"><br><br>
+
+    <label for="lastname">LastName</label>
+    <input type="text" id="lastname" maxlength="8" placeholder="Last Name"><br><br>
+
+    <label for="email">Enter Your Email</label>
+    <input type="email" id="email" placeholder="Email"><br><br>
+
+    <label for="password-eamil">Email Password</label>
+    <input type="password" id="password-email" placeholder="Email Password"><br><br>
+
+    <label for="createpassword">Create Password</label>
+    <input type="password" placeholder="Create Password"><br><br>
+
+
+<div class="regbutton">
+    <button type="submit">Register</button>
+    <button type="reset">Cancel</button>
+  </div>
+</center>
+
+  </form>
+
+</div>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="formin" id="container">
+  <center>
+  <div class="form">
+    <form action="" method="" enctype="multipart/form-data">
+  
+  
+  <button class="remove" id="remove1"><img src="remove.png" alt="" width="16px" class="remove1"></button>
+        <h2 class="loginh2">Login</h2>
+  
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Enter Your Name"><br><br>
+  
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Enter Your Email"><br><br>
+  
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter Your Password"><br><br>
+  
+  
+  
+  <div class="loginbtn">
+  <button type="submit" class="cancel" id="button">Login</button>
+  <button type="reset" class="cancel" id="button">Cancel</button>
+  </div>
+
+  </form>
+</div>
+</div>
+</center>
+
+  </body>
+
+<script>
+var login = document.querySelector('a');
+    
+    login.addEventListener("click",function(i) {
+
+        if (i.target.id == "login") {
+
+            document.getElementById("regfuls").style.display = "none";
+            document.getElementById("container").style.display = "block";
+
+            
+        }
+
+        if (i.target.id == "remove1") {
+
+            document.getElementById("container").style.display = "none";
+            
+        }
+
+
+
+    })
+    
+
+
+    function reg() {
+        document.getElementById("regfuls").style.display = "block";
+        
+        document.getElementById("container").style.display = "none";
+    }
+
+    function remove() {
+        document.getElementById("regfuls").style.display = "none";
+    }
+
+function th() {
+  return z = 5 + 1
+}
+
+    function the(z,i) {
+      return z =  z + 1;
+    }
+
+    document.write(the(5,th));
+
+</script>
+    
+
+</html>
