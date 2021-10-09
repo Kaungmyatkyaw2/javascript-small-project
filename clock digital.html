@@ -1,0 +1,100 @@
+<html>
+
+<head>
+
+</head>
+
+<style>
+
+h1, h2{
+    color:rgb(241, 83, 10)
+} 
+
+.al span{
+    font-size: 30px;
+    font-weight: bold;
+    color:blue;
+    color:rgb(4, 3, 70)
+    
+}
+
+#sec{
+    font-size:25px;
+}
+
+.al{
+    border:solid 5px rgba(13, 157, 241, 0.6);
+    border-radius: 4px;
+    margin-top:5%;
+    width:200px;
+    height:40px;
+    background:yellow;
+}
+
+</style>
+
+<body id="body">
+    <center>
+        
+        <h1 id="year"></h1>
+        <h2 id="date"></h2>
+        <h2 id="day"></h2>
+        <h2 id="month"></h2>
+
+
+    <div class="al" id="al">
+      
+        
+        <span id="hour"></span>
+        <span id="min"></span>
+        <span id="sec"></span>
+    </div>
+
+   
+
+    
+</center>
+
+
+
+</body>
+
+<script>
+
+var st = new Date();
+
+function time() {
+    var dt = new Date();
+    var i = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    document.getElementById("hour").innerHTML = dt.getHours() + " : ";
+    document.getElementById("min").innerHTML = dt.getMinutes() + " : ";
+    document.getElementById("sec").innerHTML = dt.getSeconds() ;
+    document.getElementById("year").innerHTML = dt.getFullYear();
+    document.getElementById("month").innerHTML = "Month - " + months[dt.getMonth()];
+    document.getElementById("date").innerHTML = "Date - " +  dt.getDate();
+    document.getElementById("day").innerHTML = "Day - " + i[dt.getDay()];
+}
+
+if (st.getHours() > 17) {
+    document.getElementById("body").style.backgroundColor = "rgb(4, 3, 70)";
+}if (st.getHours() < 12) {
+    document.getElementById("body").style.backgroundColor = rgb(248, 230, 66);
+}if (st.getHours())
+
+window.load = time();
+
+setInterval(function(){
+time();
+},1000);
+
+setInterval(function(){
+    var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    document.getElementById("al").style.backgroundColor = randomColor;
+    document.getElementsByTagName("body").style.backgroundColor = "blue";
+}
+,3000);
+
+</script>
+
+</html>

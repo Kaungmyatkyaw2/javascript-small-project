@@ -1,0 +1,48 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input type="text" id="input" value="0">
+    <button type="button" onclick="result()">Click me!</button>
+    <h1 id="i"></h1>
+</body>
+<script>
+
+
+
+
+    function result() {
+
+        var input = document.getElementById("input").value;
+
+        var pre = input % 2;
+        var is;
+
+        if (isNaN(input)) {
+            is = "Please Take the Number"
+        } else {
+            is = (pre == 0) ? "That is Even" : "That is Odd"
+        }
+
+        document.getElementById("i").innerHTML = is;
+
+    }
+
+
+    var x = "hello world";
+
+    var v = 2;
+
+    function my() {
+        x = (v > 4) ? "he" : "ki";
+
+        console.log(x)
+    }
+
+
+</script>
+
+</html>
