@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<style type="text/css">
+
+body{
+	background-color: #111;
+}
+
+button{
+	font-size:20px;
+	padding: 10px 20px;
+	margin-left: 20px;
+	background-color: #222;
+	color: tomato;
+	border:2px solid orange;
+	border-radius: 5px;
+	transition: 0.4s
+}
+
+button:hover{
+	background-color: tomato;
+	color:#222;
+}
+
+.btn{
+	margin: 4% 0 0 35%;
+}
+
+h2{
+	display: block;
+	font-size: 35px;
+	margin: 15% 0 0 50%;
+	color: #024d9e;
+}
+
+</style>
+
+<body>
+
+<h2 id="h2" class="display"></h2>
+
+
+<div class="btn">
+
+<button id="decre" class="decre button">Decrement</button>
+
+
+<button id="incre" class="incre button">Increment</button>
+
+<button id="reset" class="reset button">Reset</button>
+
+
+</div>
+</body>
+
+<script type="text/javascript">
+
+	var data = 0;
+
+document.querySelector("h2").innerText = data;
+
+var value = document.querySelector("h2").innerText;
+
+
+
+var add = document.querySelector("#incre");
+var subtract = document.querySelector('#decre');
+var reset = document.querySelector('#reset');
+var display = document.getElementById('h2');
+
+
+
+
+add.addEventListener('click',function() {
+		data = data + 1;
+	document.querySelector("#h2").innerText = data;
+
+	display.style.color = changeColor(data);
+});
+
+
+
+
+subtract.addEventListener('click',function() {
+		data = data - 1;
+	document.querySelector("#h2").innerText = data;
+
+	display.style.color = changeColor(data);
+});
+
+
+
+reset.addEventListener('click',function() {
+		data = 0;
+	document.querySelector("#h2").innerText = data;
+		
+		display.style.color = changeColor(data);
+});
+
+
+
+function changeColor(number){
+    var color = "";
+
+    if(number < 0 ){
+
+        color = "#fc2f21";
+
+    } else if (number > 0 ){
+
+        color = "#62fc3f";
+
+    } else{
+        color="#024d9e";
+    }
+
+    return color;
+}
+
+
+</script>
+
+</html>
